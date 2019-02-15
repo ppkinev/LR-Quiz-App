@@ -1,0 +1,106 @@
+@import '../variables.scss';
+
+$tabs-h: 4.2rem;
+
+.long-tabs {
+    height: $tabs-h;
+    overflow: auto;
+    white-space: nowrap;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.tabs-wrapper {
+    position: fixed;
+    top: $header-h;
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+    height: $tabs-h;
+    overflow: hidden;
+    //background: $brand-color-dark;
+    background: $brand-color;
+    color: $brand-color-lite;
+    font-size: 1.2rem;
+    //box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, .33);
+
+    .tab-item {
+        display: inline-block;
+        height: 2.5rem;
+        padding: 13px 3px 0 5px;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+
+        &.selected {
+            color: $color-grey-lite;
+            border-bottom: 3px solid $color-grey-lite;
+        }
+    }
+
+    & + .screen-swiper {
+        top: $tabs-h;
+    }
+}
+
+.tabs {
+    position: fixed;
+    top: $header-h;
+    z-index: 100;
+    right: 0;
+    left: 0;
+    height: $tabs-h;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-around;
+    background: $brand-color-dark;
+    color: $brand-color-lite;
+    font-size: 1.2rem;
+    box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, .33);
+
+    &.white {
+        color: $color-grey-dark;
+        background: #fff;
+
+        .tab-item {
+            &.selected {
+                color: $color-grey-dark;
+                border-bottom: 3px solid $brand-color;
+            }
+        }
+    }
+
+    .tab-item {
+        box-sizing: border-box;
+        height: calc($tabs-h - 1px); /*to show bottom shadow*/
+        padding: 13px 3px;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+
+        &.selected {
+            color: $color-grey-lite;
+            border-bottom: 3px solid $color-grey-lite;
+        }
+    }
+
+    & + .screen-swiper {
+        top: $tabs-h;
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .tabs-wrapper {
+        background: $mbet-brand;
+        color: $mbet-light;
+    }
+    .tabs {
+        background: $mbet-dark;
+        color: $mbet-light;
+
+        &.white {
+
+            .tab-item {
+                &.selected {
+                    border-bottom: 3px solid $mbet-brand;
+                }
+            }
+        }
+    }
+}

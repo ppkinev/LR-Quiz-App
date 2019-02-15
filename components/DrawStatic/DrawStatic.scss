@@ -1,0 +1,14 @@
+@import '../variables.scss';
+@import '../DrawBet/DrawBet.scss';
+
+.draw-static {
+    .draw-claim-title {
+        padding-top: 10px;
+        color: $brand-color;
+    }
+    .draw-claim-subtitle {
+        margin: 5px 0 30px;
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+}

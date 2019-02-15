@@ -1,0 +1,184 @@
+@import '../variables.scss';
+
+.badges-panel {
+    background-color: $color-white;
+    box-shadow: 1px 0 3px rgba(0,0,0,.1);
+    margin: 1rem 1rem 0 1rem;
+}
+
+.badges-full-list {
+    padding-bottom: 1rem;
+}
+
+.badges-section-header {
+    background: $brand-color;
+    color: $color-white;
+    height: $section-header-h;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.badges-section-list {
+
+    .badge-section-item {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $color-grey-opaque;
+    }
+
+    &.earned {
+        .badge-section-item {
+            background: $color-white;
+        }
+    }
+
+    &.missing {
+        .badge-section-item {
+            background: rgba(235, 240, 245, 1);
+
+            img {
+                filter: grayscale(100%);
+                opacity: 0.4;
+            }
+        }
+
+        .badge-section-item-body {
+            .badge-title {
+                color: $color-grey-dark;
+            }
+        }
+    }
+}
+
+.badge-section-item-body {
+    display: flex;
+    height: 8rem;
+    color: #fff;
+    text-decoration: none;
+
+    .badge-section-item-team-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .badge-section-item-team {
+        margin-left: 1rem;
+        margin-right: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 6rem;
+        }
+    }
+
+    .badge-section-item-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        padding: 0 1rem 0 0;
+    }
+
+    .badge-title {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: $brand-color;
+    }
+
+    .badge-description {
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-bottom: 4px;
+        color: $color-grey;
+    }
+}
+
+.badgeModal {
+    left: 55%;
+    margin: -40% 0 0 -50%;
+    opacity: 0;
+    position: absolute;
+    top: -50%;
+    visibility: hidden;
+    width: 90%;
+    transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    z-index: 999999;
+}
+
+.badgeModal.visible {
+    opacity: 1;
+    top: 50%;
+    visibility: visible
+}
+
+.badgeModal .footer {
+    border: none;
+}
+
+.badgeModal h2 {
+    margin: 0;
+    color: #fff
+}
+
+.badgeModal .copy, .badgeModal .header, .badgeModal .footer {
+    color: #fff
+}
+
+.badgeModal-content {
+    position: relative;
+    padding: 20px 20px 30px;
+    text-align: center;
+    z-index: 20;
+    border-radius: 5px;
+    color: #000;
+    background: #fff;
+}
+
+.badgeModalImage {
+    display: block;
+    width: 10rem;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.badgeModalTitle {
+    font-size: 3em;
+    line-height: 1.2;
+    color: #082581;
+}
+
+.badgeModalDesc {
+    font-size: 1.5em;
+    color: $color-grey-dark;
+}
+
+.overlay {
+    background-color: #000;
+    background: rgba(0, 0, 0, .8);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.testBadges {
+    height: 10rem;
+    background: url('http://spr-static-test.cloudapp.net/content/main/assets/images/badges/geek.svg');
+}
+
+body.$(mbet-class-wrapper) {
+    .badges-section-header {
+        background: $mbet-brand;
+    }
+}

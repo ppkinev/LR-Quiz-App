@@ -1,0 +1,82 @@
+@import '../variables.scss';
+@import '../utils.scss';
+
+.quiz-teams {
+    width: 100%;
+    min-height: 105px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .versus {
+        padding: 0 1.5rem;
+        margin-top: -15px;
+        font-size: 1.7rem;
+        color: $color-grey;
+        text-transform: uppercase;
+    }
+}
+
+.select-btn {
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+
+    &.selected {
+        /*background: $color-selection;*/
+    }
+}
+
+.quiz-team-container {
+    font-size: 1.4rem;
+    color: #333333;
+    text-align: center;
+    align-self: flex-start;
+    margin: 0 .8rem;
+
+    @mixin tr-btn-like;
+
+    &:hover, &:active {
+        .quiz-team-name {
+            color: $brand-color;
+        }
+    }
+}
+
+.quiz-team-name {
+    transition: color 0.2s ease;
+    margin-top: 8px;
+}
+
+.team-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        height: 70%;
+        width: auto;
+    }
+
+}
+
+.big-margin-top {
+    margin-top: 4rem;
+}
+
+
+body.$(mbet-class-wrapper) {
+    .quiz-team-container {
+        &:hover, &:active {
+            .quiz-team-name {
+                color: $mbet-brand;
+            }
+        }
+    }
+}

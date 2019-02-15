@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>tickbox</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Match-details" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01---Match-detail---Result-match" transform="translate(-275.000000, -412.000000)">
+            <g id="Result" transform="translate(15.000000, 365.000000)">
+                <g id="Winner" transform="translate(85.000000, 47.000000)">
+                    <g id="scorepredictor/icons/Check" transform="translate(175.000000, 0.000000)">
+                        <g id="Check">
+                            <circle id="Oval" fill="#082581" cx="10" cy="10" r="10"></circle>
+                            <polygon id="Combined-Shape" fill="#FFFFFF" points="8.62499966 13.1062494 6.01874977 10.4999996 5.13124977 11.3812494 8.62499966 14.8749993 16.1249992 7.37499974 15.2437493 6.49374988"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

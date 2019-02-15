@@ -1,0 +1,171 @@
+@import '../variables.scss';
+
+$footer-h: 45px;
+.popup-screen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(58, 58, 58, .9);
+    z-index: 101;
+    opacity: 1;
+    transition: opacity .4s ease;
+
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.welcome-screen {
+}
+
+/*
+Popup
+*/
+.welcome-popup {
+    position: relative;
+    height: calc(100% - 30px);
+    margin: 15px;
+
+    background: $brand-color;
+    border-radius: 16px;
+    overflow: hidden;
+
+    &.fb-app {
+        height: 80%;
+    }
+
+    & > .screen-swiper {
+        bottom: $footer-h;
+    }
+}
+
+.welcome-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-figure {
+    width: 100%;
+    max-width: 280px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 100%;
+        border-radius: 50%;
+    }
+}
+
+@media (max-height: 480px) {
+    .welcome-figure {
+        height: 50%;
+        width: auto;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+.welcome-text {
+    min-height: 120px;
+    text-align: center;
+
+    .welcome-title {
+        font-size: 2.4rem;
+        margin: 0 0 15px;
+    }
+    p {
+        font-size: 1.4rem;
+        line-height: calc(20 / 14);
+        color: #fff;
+        margin: 0;
+    }
+}
+
+/*
+Footer
+*/
+.welcome-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc($footer-h - 1px);
+    border-top: 1px solid $brand-color-lite;
+    background: rgba(255, 255, 255, .15);
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-footer-link {
+    padding: 0 20px;
+    min-width: 100px;
+
+    &.left {
+        color: $brand-color-dark;
+    }
+    &.right {
+        text-align: right;
+    }
+
+    .icon-next {
+        width: 14px;
+        height: 14px;
+        transform: rotate(180deg);
+    }
+}
+
+$bullet-sz: 10px;
+.welcome-bullets {
+    height: $bullet-sz;
+    display: flex;
+    justify-content: space-between;
+
+    .bullet {
+        width: $bullet-sz;
+        height: $bullet-sz;
+        margin: 0 2px;
+
+        border-radius: 50%;
+        background: $brand-color-dark;
+
+        &.active {
+            background: $brand-color-lite;
+        }
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .welcome-popup {
+        background: $mbet-brand;
+    }
+    .welcome-footer-link {
+        &.left {
+            color: $mbet-dark;
+        }
+    }
+    .welcome-bullets {
+        .bullet {
+            background: $mbet-dark;
+
+            &.active {
+                background: $mbet-light;
+            }
+        }
+    }
+}

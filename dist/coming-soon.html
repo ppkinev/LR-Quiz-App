@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charSet="utf-8"/>
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Score Predictor</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="theme-color" content="#082581"/>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,700'/>
+    <style>
+        /* Reset */
+        html, body, div, span,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details,
+        figure, figcaption, footer, header,
+        menu, nav, section {
+            font: inherit;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        ul, ol, li {
+            list-style: none;
+        }
+        h1, h2, h3, h4, h5, ul, ol, li {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin: 5px 0;
+        }
+        /*Type*/
+        html {
+            font-size: 10px;
+            font-family: 'Roboto', 'Helvetica', sans-serif;
+        }
+        a {
+            font-size: inherit;
+            color: inherit;
+            text-decoration: none;
+        }
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 300;
+        }
+        h3 {
+            font-size: 1.9rem;
+            font-weight: 400;
+        }
+        h4, p {
+            font-size: 1.9rem;
+            font-weight: 300;
+        }
+        p.text-x {
+            font-size: 1.4rem;
+        }
+        .color-brand { color: #8392c0; }
+        .color-brand-lite { color: #FFF; }
+        .color-grey-dark { color: #727272; }
+        .opacity-80 { opacity: .8 }
+        .opacity-60 { opacity: .6 }
+        .opacity-40 { opacity: .4 }
+        /*Bg*/
+        body {
+            color: #fff;
+            background: #F0F0F0 url('./images/bg.svg') no-repeat;
+            background-position: left bottom;
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        /*Header*/
+        .header {
+            min-height: 100px;
+            padding: 30px 0 20px;
+            text-align: center;
+            background-color: #082581;
+        }
+        .ball-img {
+            width: 55px;
+            height: 55px;
+        }
+        .boxed {
+            display: inline-block;
+            padding: 10px 20px;
+            border-bottom: 2px solid #8392c0;
+            margin-bottom: 10px;
+        }
+        /*Band*/
+        .band {
+            padding: 15px 0;
+            background-color: #07205d;
+            text-align: center;
+        }
+        /*Columns*/
+        .col-3 {
+            display: flex;
+            align-items: stretch;
+        }
+        .col {
+            width: calc(100% / 3);
+            padding: 30px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .col-figure {
+            flex-grow: 1;
+            width: 50%;
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .col-figure img {
+            width: 100%;
+            border-radius: 50%;
+            background-color: #07205d;
+        }
+        .col-text {
+            min-height: 110px;
+            text-align: center;
+        }
+        .col-text .col-title {
+            margin-bottom: 15px;
+        }
+
+        @media all and (max-width: 1080px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        @media all and (max-height: 630px) {
+            .header {
+                padding: 5px 0 10px;
+            }
+
+            .header img {
+                display: none;
+            }
+
+            .col-figure {
+                max-width: 120px;
+            }
+
+            .band {
+                padding: 10px 0;
+            }
+
+            .band h3 {
+                font-size: 1.6rem;
+            }
+            .col {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .col-text {
+                text-align: left;
+                margin-left: 15px;
+            }
+        }
+
+        @media all and (max-width: 550px) {
+            p {
+                margin: 0;
+            }
+            .col-3 {
+                display: block;
+            }
+            .col {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        var href = document.location.origin;
+        var link = '<a href="' + href + '">' + href + '</a>';
+    </script>
+</head>
+<body>
+<div id="app">
+    <!--Header-->
+    <header class="header">
+        <div class="container">
+            <img class="ball-img" src="./images/icon-ball-lg.svg"/>
+            <h4 class="color-brand-lite">
+                <span class="boxed">Welcome to Everton Score Predictor!</span>
+            </h4>
+            <h2>Please go to this page from your mobile - <script>document.write(link)</script></h2>
+            <p class="text-x color-brand-lite">Desktop version is coming very soon.</p>
+        </div>
+    </header>
+    <!--Band-->
+    <div class="band color-brand">
+        <div class="container">
+            <h3>Register now on mobile and earn 10 extra points,<br/>
+                also be the first to get a chance to win exclusive Everton prizes.</h3>
+        </div>
+    </div>
+    <!--Columns-->
+    <div class="container">
+        <ul class="col-3 color-grey-dark">
+            <li class="col">
+                <div class="col-figure">
+                    <img src="./images/welcome-fig-win.svg"/>
+                </div>
+                <div class="col-text">
+                    <h3 class="col-title">Win Everton Prizes</h3>
+                    <p class="text-x opacity-80">exclusive merchandise</p>
+                    <p class="text-x opacity-60">money can't buy experiences</p>
+                </div>
+            </li>
+            <li class="col">
+                <div class="col-figure">
+                    <img src="./images/welcome-fig-earn.svg"/>
+                </div>
+                <div class="col-text">
+                    <h3 class="col-title">Earn Everton Points</h3>
+                    <p class="text-x opacity-80">predicting match outcomes</p>
+                    <p class="text-x opacity-60">downloading apps</p>
+                    <p class="text-x opacity-40">sharing & more</p>
+                </div>
+            </li>
+            <li class="col">
+                <div class="col-figure">
+                    <img src="./images/welcome-fig-predict.svg"/>
+                </div>
+                <div class="col-text">
+                    <h3 class="col-title">Predict Match Scores</h3>
+                    <p class="text-x opacity-80">beat your mates</p>
+                    <p class="text-x opacity-60">rank highest in Leaderboards</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

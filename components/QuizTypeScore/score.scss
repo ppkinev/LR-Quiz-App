@@ -1,0 +1,154 @@
+@import '../variables.scss';
+@import '../utils.scss';
+
+.teams-idle-wrapper {
+    min-height: 130px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.score-select-panel {
+    background: $color-white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+    padding: 2rem;
+    margin: 0 1rem;
+    border-radius: 2px;
+}
+
+@media only screen and (max-width: 375px) {
+    .teams-idle-wrapper {
+        margin-bottom: 10px;
+    }
+}
+
+.team-idle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.active-to-set-score {
+    .team-idle-content {
+        color: $brand-color-dark;
+    }
+    .team-name {
+        color: $color-grey;
+    }
+}
+
+.team-idle-content {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0 auto 1rem;
+    background: rgba(114, 114, 114, .15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    .team-idle.touched & {
+        background: rgba(114, 114, 114, .3);
+    }
+    .team-idle.selected & {
+        background: $brand-color-dark;
+    }
+}
+
+.team-name {
+    font-size: 1.4rem;
+    text-align: center;
+    color: $color-grey-opaque;
+
+    .team-idle.touched & {
+        color: $color-grey;
+    }
+    .team-idle.selected & {
+        color: $brand-color-dark;
+    }
+}
+
+
+.colon {
+    font-size: 5rem;
+    color: $brand-color;
+    font-weight: bold;
+    margin: 0 2rem;
+}
+
+.score-choice {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2rem;
+
+    .score-btn-col {
+        flex: 0 1 26%;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .score-btn {
+        width: 4.4rem;
+        height: 4.4rem;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+        color: $brand-color;
+        font-size: 2.4rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @mixin tr-btn-like;
+        transition: color 200ms ease, opacity 200ms ease;
+
+        &.zero {
+            position: relative;
+        }
+
+        &.disabled {
+            opacity: 0.5;
+            color: $color-grey;
+        }
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .team-idle.selected .team-idle-content {
+        background: $mbet-dark;
+    }
+    .team-idle.selected .team-name {
+        color: $mbet-dark;
+    }
+
+
+    .active-to-set-score {
+        .team-idle-content {
+            color: $mbet-dark;
+        }
+    }
+    .team-name {
+        .team-idle.selected & {
+            color: $mbet-dark;
+        }
+    }
+    .colon {
+        color: $mbet-brand;
+    }
+    .score-choice {
+        .score-btn {
+            color: $mbet-brand;
+        }
+    }
+}

@@ -1,0 +1,218 @@
+@import '../variables.scss';
+@import '../utils.scss';
+
+.fetching-section {
+    padding-top: 40%;
+}
+
+.fixture-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/*TODO - section-header*/
+.fixture-item-header {
+    color: $color-grey;
+    height: $section-header-subtitle;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 100;
+    &.is-collapsed {
+        height: 0.8rem;
+        background: transparent;
+    }
+}
+
+.fixture-item-body {
+    display: flex;
+    height: 10rem;
+    color: #fff;
+    text-decoration: none;
+    background-color: $color-white;
+    margin: 0 1rem;
+    box-shadow: 0 1px 2px $color-grey-opaque;
+    position: relative;
+    overflow: hidden;
+
+    .fixture-item:last-child & {
+        border-bottom: 1px solid $color-grey-opaque;
+    }
+
+    .list-label {
+        margin-right: 0;
+    }
+
+    &.has-finished {
+        background: $color-grey-opaque;
+    }
+
+    .fixture-item-match {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        height: 100%;
+
+        &.has-finished {
+            background-color: $color-grey-bg;
+        }
+
+        @mixin tr-btn-like;
+    }
+
+    .fixture-item-friends {
+        display: flex;
+        align-items: center;
+        width: 30%;
+        text-align: center;
+        //justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+        padding-top: 1rem;
+        box-sizing: border-box;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 125vw;
+            height: 125vw;
+            background-color: $brand-color-light;
+            transform: translate(-13%, -50%) rotateZ(45deg);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        @mixin tr-btn-like;
+
+        .list-label-cont {
+            margin: 0;
+
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .list-meta {
+            text-transform: none;
+            color: $color-grey;
+        }
+
+        .fixture-item-friends-holder {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fixture-friend-holder {
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid $color-white;
+            border-radius: 50%;
+            overflow: hidden;
+
+            &:nth-child(1) {
+                margin-right: -1rem;
+            }
+            &:nth-child(3) {
+                margin-left: -1rem;
+            }
+        }
+
+        .fixture-friends-image {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .fixture-item-team-icons {
+        width: 7.6rem;
+        padding-left: 1rem;
+        margin-right: 0.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fixture-item-team {
+        width: 4rem;
+        background: #fff;
+        height: 4rem;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:first-child {
+            position: relative;
+        }
+        img {
+            width: 3rem;
+            border-radius: 50%;
+        }
+    }
+    .fixture-item-team-overlap {
+        margin-left: -0.8rem;
+    }
+    .fixture-item-content {
+        text-align: center;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        margin: 0 1rem;
+
+        .list-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            position: absolute;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 100%;
+        }
+
+        .list-label-cont {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .thin-grey {
+        font-weight: 400;
+        color: $color-grey;
+    }
+
+    .fixture-items-time {
+        padding-left: 1rem;
+
+        color: $color-grey;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: .6rem;
+        margin-top: -1rem;
+
+        .live-match {
+            color: $color-bet;
+        }
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .fixture-item-body {
+        .fixture-item-friends {
+            &:after {
+                background-color: $mbet-light;
+            }
+        }
+        .list-meta {
+            color: $text-color;
+        }
+
+    }
+}

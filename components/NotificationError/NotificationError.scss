@@ -1,0 +1,56 @@
+@import '../variables.scss';
+
+.bottom-notification-error {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 5rem;
+    width: 100%;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 6.5rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    background-color: $color-grey;
+    font-size: 1.1rem;
+
+    transform: translateY(150%);
+    animation: notification-appears 0.3s ease forwards 1;
+
+    &.hidden {
+        animation: notification-disappears 0.3s ease forwards 1;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        bottom: 0;
+        background-image: url('./images/error-card.svg');
+        background-position: left bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 4.7rem;
+        height: 5.7rem;
+    }
+}
+
+@keyframes notification-appears {
+    0% {
+        transform: translateY(150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes notification-disappears {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(150%);
+    }
+}

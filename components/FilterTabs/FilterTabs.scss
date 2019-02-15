@@ -1,0 +1,58 @@
+@import '../variables.scss';
+
+.filter-tabs {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 5.5rem;
+  text-align: center;
+  background: $brand-color;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    width: 6rem;
+    height: 100%;
+    margin: 0 1.5rem 0 1.5rem;
+    padding-top: 6px;
+    text-align: center;
+
+    &.active {
+      color: #07205D;
+      background: #fff;
+    }
+
+    &:first-child {
+      .tabs-ico {
+        margin-bottom: 3px;
+      }
+    }
+
+    img {
+      width: 21px;
+      height: 22px;
+    }
+
+    .tabs-ico {
+      width: 2.3rem;
+    }
+  }
+
+  .tabs-title {
+    font-size: 12px;
+    line-height: 28px;
+  }
+}
+
+body.$(mbet-class-wrapper) {
+    .filter-tabs {
+        background: $mbet-brand;
+
+        li {
+            &.active {
+                color: $mbet-brand;
+            }
+        }
+    }
+}

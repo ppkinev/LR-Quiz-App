@@ -1,0 +1,237 @@
+@import '../variables.scss';
+
+.participants-section {
+    text-align: center;
+    width: 100%;
+    color: #222;
+
+    .participants-tabs {
+        padding-top: 3rem;
+        width: 100%;
+        display: table;
+        background-color: $color-white;
+
+        .participant-tab {
+            color: $brand-color-lite;
+            font-size: 1.4rem;
+            line-height: 3.2rem;
+            display: table-cell;
+            border-bottom: transparent 2px solid;
+
+            transition: color 0.2s ease, border-bottom 0.2s ease;
+
+            &.active {
+                color: $brand-color;
+                border-bottom: $brand-color 2px solid;
+            }
+        }
+
+        .subtitle {
+            color: $color-grey;
+        }
+    }
+
+    .participants-list-holder {
+        padding: 1rem;
+
+        .participants-list {
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .participants-list-item-li {
+            & + .participants-list-item-li {
+                border-top: 1px solid $color-grey-lite;
+            }
+        }
+
+        .participants-list-item {
+            background-color: $color-white;
+            padding: 1.5rem;
+            display: block;
+
+            /* display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center; */
+
+            @mixin tr-btn-like;
+
+            text-align: left;
+            font-size: 0;
+
+            & > * {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        .user-image-holder {
+            /*width: 3rem;
+            height: 3rem;*/
+            position: relative;
+            width: 12%;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            &:after {
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                bottom: -.5rem;
+                right: -.5rem;
+                background-image: url('./images/star.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            &.winner {
+                &:after {
+                    content: '';
+                }
+            }
+        }
+
+        .user-info-section {
+            width: 70%;
+            //flex-grow: 1;
+            margin: 0 1.5rem;
+        }
+
+        .user-top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 1rem;
+        }
+
+        .user-bottom {
+            display: block;
+        }
+
+        .user-question {
+            text-align: left;
+            font-size: 1rem;
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 32%;
+
+            .choice-holder {
+                max-width: 90%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            &-choice {
+                line-height: 1.5rem;
+                margin: 0;
+                color: $color-grey;
+
+                display: inline;
+            }
+
+            &.correct {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: -2px;
+                    right: 1rem;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: $brand-color;
+                    background-image: url('./images/icon-checkbox.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 60%;
+                }
+            }
+        }
+
+        .user-name {
+            font-size: 1.3rem;
+            color: $brand-color;
+        }
+
+        .user-winning {
+            display: inline-block;
+            background-color: $color-bet;
+            color: $color-white;
+            line-height: 2rem;
+            padding: 0 1rem;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+
+            &:before {
+                content: '+';
+            }
+        }
+
+        .user-relations {
+            /*width: 3rem;*/
+            height: 2rem;
+
+            width: 6%;
+
+            background-image: url('./images/not-connected.svg');
+            background-position: left center;
+            background-size: 76%;
+            background-repeat: no-repeat;
+
+            &.friend {
+                background-image: url('./images/friends.svg');
+                background-size: contain;
+            }
+
+            &.follower {
+                background-image: url('./images/followers.svg');
+            }
+
+            &.same-user {
+                background-image: none;
+            }
+        }
+    }
+
+}
+
+body.$(mbet-class-wrapper) {
+    .participants-section {
+
+        .participants-tabs {
+            .participant-tab {
+                color: $mbet-light;
+
+                &.active {
+                    color: $mbet-brand;
+                    border-bottom: $mbet-brand 2px solid;
+                }
+            }
+        }
+
+        .participants-list-holder {
+            .user-question {
+                &.correct {
+                    &:after {
+                        background-color: $mbet-brand;
+                    }
+                }
+            }
+
+            .user-name {
+                color: $mbet-brand;
+            }
+        }
+    }
+}

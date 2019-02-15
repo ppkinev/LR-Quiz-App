@@ -1,0 +1,196 @@
+@import '../variables.scss';
+
+.bet, .quiz-content.bet {
+    overflow-y: auto;
+}
+
+.bet-subtitle {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: $color-grey-dark;
+
+    .text-lg {
+        font-size: 3.2rem;
+    }
+    .text-sm {
+        font-size: 1.2rem;
+    }
+}
+
+.bet-value {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    color: $brand-color;
+}
+
+.bet-error {
+    min-height: 15px; /*hack*/
+    visibility: hidden;
+    padding: 0 15px 5px;
+    font-size: 1rem;
+    color: $color-error;
+    text-align: center;
+
+    &.reveal {
+        visibility: visible;
+    }
+}
+
+.desc-text {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.4;
+    color: $color-grey-dark;
+}
+
+.bet-panel-holder {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+
+    &:last-of-type {
+        padding-bottom: 1rem;
+    }
+
+    .bet-panel-title {
+        color: $color-grey;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+    }
+
+    .bet-panel {
+        background-color: $color-white;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+        & + .bet-panel {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .bet-panel-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid $color-grey-lite;
+
+        .bet-panel-choice {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            &-img-holder {
+                width: 2.4rem;
+                height: 2.4rem;
+                border-radius: 50%;
+                background-color: $color-white;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+                padding: 4px;
+                margin-right: 6px;
+
+                display: flex;
+                justify-content: center;
+            }
+
+            &-img {
+                width: auto;
+                height: 100%;
+            }
+
+            &-text {
+                color: #333;
+                font-weight: 600;
+            }
+
+            & + .bet-panel-choice {
+                margin-left: 1.5rem;
+            }
+        }
+
+        .choice-content {
+            color: $color-grey-dark;
+            font-weight: 400;
+        }
+    }
+
+    .bet-panel-body {
+        padding: 1rem 0 1.5rem;
+        text-align: center;
+    }
+
+    .panel-bet-button {
+        font-size: 1.5rem;
+        color: $color-white;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 0 1.5rem;
+        background-color: $brand-color;
+        text-align: center;
+        line-height: 4rem;
+        border-radius: 2rem;
+        transition: background-color 0.2s ease;
+
+        &.disabled {
+            background-color: $color-grey;
+        }
+
+        &.bet {
+            background-color: $color-bet;
+        }
+    }
+
+    .bet-panel-footer {
+        border-top: 1px solid $color-grey-lite;
+        padding: .7rem 0;
+
+        &-participants {
+            color: $color-grey-dark;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            font-weight: 500;
+        }
+
+        .fixture-item-friends-holder {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-right: 2rem;
+        }
+
+        .fixture-friend-holder {
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid $color-white;
+            border-radius: 50%;
+            overflow: hidden;
+
+            &:nth-child(1) {
+                margin-right: -1rem;
+            }
+            &:nth-child(3) {
+                margin-left: -1rem;
+            }
+        }
+
+        .fixture-friends-image {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .bet-value {
+        color: $mbet-brand;
+    }
+    .bet-panel-holder {
+        .panel-bet-button {
+            background-color: $mbet-brand;
+        }
+    }
+}

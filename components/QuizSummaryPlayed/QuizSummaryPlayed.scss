@@ -1,0 +1,47 @@
+@import '../variables.scss';
+@import '../QuizSummary/summary.scss';
+
+.summary-played {
+    overflow-y: auto;
+
+    .quiz-info {
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 100;
+    }
+
+    @media only screen and (max-width: 375px) {
+        .quiz-info {
+            padding: 1.1rem 0 1.7rem;
+        }
+    }
+
+    .summary-choice {
+        .choice-check {
+            border: 1px solid $color-grey;
+            &.selected {
+                background-color: $color-grey;
+            }
+        }
+    }
+
+    .summary-top {
+        background-color: $brand-color;
+    }
+
+    .participants-link-title {
+        width: 100%;
+        margin-top: 4rem;
+        padding-bottom: 2rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+}
+
+body.$(mbet-class-wrapper) {
+    .summary-played {
+        .summary-top {
+            background-color: $mbet-brand;
+        }
+    }
+}

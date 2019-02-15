@@ -1,0 +1,174 @@
+@import '../variables.scss';
+@import '../utils.scss';
+
+.draw-item {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0.5rem 0;
+    box-shadow: 1px 0 3px rgba(0,0,0,.1);
+}
+
+.draw-item-body {
+    position: relative;
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    padding: 2rem 0 2rem 2rem;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+
+    &:active {
+        opacity: 0.7;
+    }
+
+    background-color: $color-white;
+
+    &.has-finished {
+        background-color: $color-grey-bg;
+
+        &.is-winner {
+            .draw-item-winner-image.claim {
+                animation: icon-shake 5s ease forwards infinite;
+            }
+        }
+    }
+
+    .draw-item-aside {
+        margin-right: 1rem;
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .draw-item-image-holder {
+        position: relative;
+    }
+
+    $image-sz: 5.5rem;
+    .draw-item-image {
+        width: $image-sz;
+        height: $image-sz;
+        border-radius: 50%;
+        background: $color-white;
+        @mixin center-image;
+    }
+
+    $winner-image-sz: 2.5rem;
+    .draw-item-winner-image {
+        position: absolute;
+        top: -.7rem;
+        left: -.5rem;
+        width: $winner-image-sz;
+        height: $winner-image-sz;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        img {
+            height: 2.2rem;
+            width: auto;
+            border-radius: 50%;
+        }
+    }
+    .draw-item-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        padding-right: 3rem;
+    }
+
+    .list-item-arrow {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        width: auto;
+    }
+}
+
+.draws-section {
+    margin: 1rem;
+
+    & + .draws-section {
+        margin-top: 2rem;
+    }
+}
+
+.draws-section-header {
+    background: $brand-color;
+    color: $color-white;
+    height: $section-header-h;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+
+    &.is-collapsed {
+        height: 0.1rem;
+        background: $color-grey-opaque;
+    }
+}
+
+.recent-players-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.recent-players-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    padding-left: .7rem;
+
+    .player-holder {
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+        border: 1px solid $color-white;
+        overflow: hidden;
+        margin-left: -.7rem;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+.recent-players-text {
+    margin-left: .4rem;
+    color: $color-grey-dark;
+}
+
+@keyframes icon-shake {
+    0%, 10% {
+        transform: scale(1, 1) rotate(0deg);
+    }
+    2%, 6% {
+        transform: scale(1.4, 1.4) rotate(-20deg);
+    }
+    4%, 8% {
+        transform: scale(1.4, 1.4) rotate(20deg);
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .draws-section-header {
+        background: $mbet-brand;
+    }
+}

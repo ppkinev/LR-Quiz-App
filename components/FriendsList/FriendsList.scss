@@ -1,0 +1,225 @@
+@import '../variables.scss';
+
+.friends-search {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 4.3rem;
+    z-index: 999;
+    display: flex;
+    height: 3.8rem;
+    color: $brand-color-lite;
+    background: $brand-color-dark;
+
+    .search-ico {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: auto;
+        margin: 0 0.8rem 0 2.5rem;
+    }
+    .search-field {
+        font-size: 1.2em;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 2.2rem;
+        margin: 3px 1.8rem 0 0;
+        line-height: 1.2;
+        outline: none;
+        border: none;
+        color: $brand-color-lite;
+        border-bottom: solid 1px $brand-color-lite;
+        border-radius: 0;
+        background: none;
+    }
+    .search-field::placeholder {
+        font-size: 1em;
+        color: $brand-color-lite;
+    }
+    .search-decorator {
+        position: absolute;
+        font-size: 1.7em;
+        top: 5px;
+        right: 2.1rem;
+        color: $brand-color-lite;
+
+        & .search-inprogress {
+            position: relative;
+            width: 1.4rem;
+        }
+    }
+}
+
+.friends-tabs {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 5.5rem;
+    text-align: center;
+    background: $brand-color-dark;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        width: 6rem;
+        height: 100%;
+        margin: 0 1.5rem 0 1.5rem;
+        padding-top: 1.1rem;
+        text-align: center;
+
+        &.active {
+            color: $brand-color-dark;
+            background: $color-white;
+        }
+
+        &:first-child {
+
+            .tabs-ico {
+                margin-right: -1.3rem;
+            }
+        }
+
+        .tabs-ico {
+            height: 1.7rem;
+            width: auto;
+            margin-bottom: .5rem;
+            margin-right: -.4rem;
+        }
+    }
+
+}
+
+.friends-list-section {
+    margin-top: 3.7rem;
+    padding: 1rem 1rem 5.5rem;
+}
+
+.friends-list-header {
+    background: $brand-color;
+    color: $color-white;
+    height: $section-header-h;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.friends-list {
+    width: 100%;
+}
+
+.frineds-item {
+    display: flex;
+    flex-direction: column;
+
+    background-color: $color-white;
+    box-shadow: 1px 0 3px rgba(0,0,0,.1);
+    margin: .5rem 0;
+}
+
+.friends-request {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem 0;
+    img {
+        width: 2.8rem;
+        margin: 0 1rem 0 0;
+        z-index: 9999;
+    }
+}
+
+.request-sent {
+    margin: 0 1rem;
+    color: $color-grey;
+}
+
+.friends-name {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: $color-grey-dark;
+}
+
+.friends-meta {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    color: $color-grey;
+}
+
+.frineds-item-body {
+    display: flex;
+    height: 8rem;
+    color: #fff;
+    text-decoration: none;
+
+    .frineds-item-ico {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1.5rem 0 1.5rem;
+        &:first-child {
+            position: relative;
+        }
+        img {
+            width: 5rem;
+            border-radius: 50%;
+        }
+    }
+
+    .friends-item-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.noUserFound {
+    font-size: 1.3rem;
+    padding: 10px 0 0 15px;
+    color: $color-grey-dark;
+}
+
+.search-ico {
+    height: 11px;
+    padding-top: 3%;
+}
+
+.inline-link {
+    color: $brand-color;
+    text-decoration: underline;
+}
+
+
+body.$(mbet-class-wrapper) {
+    .friends-search {
+        color: $mbet-light;
+        background: $mbet-dark;
+    }
+
+    .friends-tabs {
+        background: $mbet-dark;
+
+        li {
+            &.active {
+                color: $mbet-dark;
+            }
+        }
+    }
+
+    .friends-list-header {
+        background: $mbet-brand;
+    }
+
+    .inline-link {
+        color: $mbet-brand;
+    }
+}

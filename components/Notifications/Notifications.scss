@@ -1,0 +1,29 @@
+@import '../variables.scss';
+
+.notification {
+  position: relative;
+  color: #fff;
+  padding: 15px 0;
+  background: #203A8C;
+
+  .content {
+    margin-left: 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .msg {
+    font-size: 1.2rem;
+    color: #A6AFCC;
+  }
+
+  .close {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 25px;
+    right: 12px;
+    color: #000;
+  }
+}

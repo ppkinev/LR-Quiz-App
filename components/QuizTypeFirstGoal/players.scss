@@ -1,0 +1,94 @@
+@import '../variables.scss';
+
+.players-list {
+    width: 100%;
+    .player-item {
+        height: 7rem;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        border-top: 0.1rem solid $color-grey-opaque;
+        background-color: $color-white;
+        margin: 0.5rem 1rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+
+        &.no-goalscorer {
+            background: $color-no-goalscorer;
+        }
+
+        &.selected:not(.no-goalscorer) {
+            background: $color-selection;
+        }
+    }
+}
+
+.player-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    font-size: 2.4rem;
+    color: $brand-color;
+    background: #fff;
+    overflow: hidden;
+    img {
+        width: 40px;
+        border-radius: 50%;
+    }
+
+    .no-goalscorer & {
+        img {
+            width: 12rem;
+            height: auto;
+            border-radius: 0;
+        }
+    }
+}
+
+.player-info {
+    flex-grow: 1;
+}
+
+.player-name {
+    font-size: 1.4rem;
+    color: $color-grey-dark;
+
+    .no-goalscorer & {
+        color: $color-grey;
+    }
+}
+
+.player-position {
+    font-size: 1.1rem;
+    color: $color-grey;
+}
+
+$head-h: 140px;
+.stats-spacer {
+    min-height: $head-h;
+}
+
+.stats-item {
+    height: 7.1rem;
+
+    &.selected {
+        background: url('../../static/images/icon-checked.png') no-repeat;
+        background-position: 15px 14px;
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .player-icon {
+        color: $mbet-brand;
+    }
+    .players-list {
+        .player-item {
+            &.no-goalscorer {
+                background: $color-grey-dark;
+            }
+        }
+    }
+}

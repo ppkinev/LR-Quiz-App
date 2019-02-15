@@ -1,0 +1,94 @@
+@import '../variables.scss';
+@import '../utils.scss';
+@import '../QuizBet/bet.scss';
+
+.draw-content {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+
+    .slider {
+        margin-bottom: 5px; /*because of error*/
+    }
+}
+
+.draw-details {
+    position: relative; /*for label*/
+    display: flex;
+    align-items: stretch;
+}
+
+.draw-details-content {
+    padding-right: 1rem;
+    flex-grow: 1;
+
+    .countdown {
+        margin-top: 15px;
+    }
+    .list-title {
+        margin: 5px 0 0;
+    }
+    .list-meta {
+        font-size: 1.4rem;
+    }
+}
+
+$image-sz: 10rem;
+.draw-details-image {
+    flex: 0 0 auto;
+    width: $image-sz;
+    height: $image-sz;
+    margin: 15px;
+    border-radius: 50%;
+    background: #fff;
+    @mixin center-image;
+}
+
+.bet-description {
+    font-size: 1.2rem;
+}
+
+.draw-claim-title {
+    font-size: 1.9rem;
+    color: $color-grey-dark;
+    text-align: center;
+}
+
+.draw-claim-subtitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $color-grey-dark;
+    text-align: center;
+}
+
+.draw-details-label {
+    position: absolute;
+    bottom: 15px;
+    left: 33px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    &.orange {
+        background: $color-winner;
+    }
+}
+
+.big-btn.money-btn.success {
+    background: $color-bet;
+}
+
+.draw-panel {
+    background-color: $color-white;
+    box-shadow: 1px 0 3px rgba(0,0,0,.1);
+    margin: 1rem 1rem 0 1rem;
+    padding: 1px 0;
+
+    .big-btn {
+        margin: 2rem;
+    }
+
+    &:last-child {
+        margin-bottom: 1rem;
+    }
+}

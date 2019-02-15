@@ -1,0 +1,18 @@
+@import '../variables.scss';
+@import '../utils.scss';
+.quiz-success {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-grey-dark;
+}
+.success-subtitle {
+  font-size: 2.4rem;
+  text-align: center;
+}
+.success-text {
+  font-size: 1.8rem;
+  text-align: center;
+}

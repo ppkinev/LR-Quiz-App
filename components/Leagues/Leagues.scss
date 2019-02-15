@@ -1,0 +1,66 @@
+@import '../variables.scss';
+
+.leagues-section-list {
+
+}
+
+.leagues-section-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $color-grey-opaque;
+}
+
+.leagues-title {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: $color-grey-dark;
+}
+
+.leagues-description {
+  font-size: 1rem;
+  line-height: 1.2; /* 14/10 */
+  margin-bottom: 4px;
+  color: $color-grey;
+}
+
+.leagues-section-item-body {
+  display: flex;
+  height: 8rem;
+  color: #fff;
+  text-decoration: none;
+
+  .leagues-section-item-team-place {
+    display: flex;
+    width: 28px;
+    margin-right: 1.2rem;
+    align-items: center;
+    justify-content: flex-end;
+    color: #727272;
+  }
+
+  .leagues-section-item-team-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .leagues-section-item-team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:first-child {
+      position: relative;
+    }
+    img {
+      width: 6rem;
+      border-radius: 50%;
+    }
+  }
+
+  .leagues-section-item-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}

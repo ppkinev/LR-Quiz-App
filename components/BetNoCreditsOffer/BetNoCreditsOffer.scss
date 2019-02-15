@@ -1,0 +1,77 @@
+@import '../variables.scss';
+
+.no-credits-offer {
+    .bet-panel-header {
+        padding: 0;
+        text-align: center;
+    }
+    .bet-panel-header-title {
+        background-image: url('./images/header-icon.png');
+        background-repeat: no-repeat;
+        background-size: 2.6rem;
+        background-position: left 40%;
+
+        padding: 1.5rem 0 1.5rem 3.5rem;
+        display: inline-block;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: $brand-color;
+        font-weight: 600;
+    }
+
+    .bet-panel-body {
+        text-align: center;
+        padding: 1rem 2.5rem 1.5rem;
+    }
+
+    .teams-holder {
+        padding: 1rem 0;
+
+        & > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .teams-holder span {
+        color: $color-grey;
+        font-size: 1.5rem;
+        margin: 0 1.2rem;
+    }
+
+    .panel-team-icon {
+        width: 3rem;
+        height: auto;
+    }
+
+    .panel-text {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: #333;
+
+        .panel-bold {
+            font-weight: 700;
+            display: inline;
+        }
+    }
+
+    .panel-bet-button {
+        margin: 1rem 3rem;
+        font-size: 1.2rem;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+
+        @mixin tr-btn-like;
+    }
+
+    .back-btn {
+        display: block;
+
+        color: $color-grey;
+        text-decoration: underline;
+        font-size: 1.1rem;
+        margin: 1rem 0;
+
+        @mixin tr-btn-like;
+    }
+}

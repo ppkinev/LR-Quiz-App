@@ -1,0 +1,85 @@
+@import '../variables.scss';
+@import '../utils.scss';
+
+$title-pad: 6.8rem;
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $header-h;
+    display: flex;
+    justify-content: space-between;
+    background-color: $brand-color;
+    z-index: 1;
+}
+
+.nav-button {
+    width: 5.2rem;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.back {
+        width: 8rem;
+        img {
+            height: 10px;
+            width: 6px;
+            margin-right: 5px;
+        }
+    }
+
+    &.logout {
+        width: 8rem;
+        color: $brand-color-light;
+        opacity: 0.5;
+    }
+}
+
+.header-title {
+    position: absolute;
+    left: $title-pad;
+    right: $title-pad;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    pointer-events: none;
+
+    h2 {
+        @mixin ellipsis;
+    }
+}
+
+.header-points {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1rem;
+
+    &.is-hidden {
+        visibility: hidden;
+    }
+}
+
+.icon-menu {
+    width: 2.2rem;
+}
+
+.icon-points {
+    width: 1.5rem;
+    margin-right: 0.8rem;
+}
+
+
+/* MBet styles */
+body.$(mbet-class-wrapper) {
+    .header {
+        background-color: $mbet-brand;
+    }
+}

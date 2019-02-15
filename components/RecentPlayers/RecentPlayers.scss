@@ -1,0 +1,37 @@
+@import '../variables.scss';
+
+.recent-players-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.recent-players-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    padding-left: .7rem;
+
+    .player-holder {
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+        border: 1px solid $color-white;
+        overflow: hidden;
+        margin-left: -.7rem;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+.recent-players-text {
+    margin-left: .4rem;
+    color: $color-grey-dark;
+}

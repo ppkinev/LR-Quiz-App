@@ -1,0 +1,153 @@
+@import '../reset.scss';
+@import '../variables.scss';
+
+html {
+    font-size: 10px;
+    /*
+      1rem = 10px
+      1rem inside media queries = 16px
+    */
+}
+
+h2 {
+    /*font-size: 3.2rem;*/
+}
+
+h3 {
+    /*font-size: 1rem;*/
+}
+
+h4 {
+    /*font-size: 1.4rem;*/
+}
+
+body {
+    color: $text-color;
+    font-family: $font-family-roboto;
+    background: $body-bg url('../../static/images/bg.png') no-repeat;
+    background-position: left bottom;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+#app {
+    height: 100%;
+}
+
+.layout {
+    padding-top: $header-h;
+    height: calc(100% - $header-h);
+
+    &.survey-popup-shown {
+        padding-top: 0;
+        height: 100%;
+    }
+}
+
+.content {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &.survey-popup-shown {
+        position: relative;
+        z-index: 10;
+    }
+
+    &.safari-scroll-fix {
+        -webkit-overflow-scrolling: auto;
+    }
+}
+
+/*Progress*/
+$loader-sz: 65px;
+$loader-w: 4px;
+$loader-color: $brand-color;
+$loader-color-opaque: $brand-color-opaque;
+.fetching {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    /*Loader*/
+    .loader {
+        position: relative;
+        border-top: $loader-w solid $loader-color-opaque;
+        border-right: $loader-w solid $loader-color-opaque;
+        border-bottom: $loader-w solid $loader-color-opaque;
+        border-left: $loader-w solid $loader-color;
+        transform: translateZ(0);
+        animation: load8 1.1s infinite linear;
+    }
+    .loader,
+    .loader:after {
+        border-radius: 50%;
+        width: $loader-sz;
+        height: $loader-sz;
+    }
+}
+
+@keyframes load8 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*Screens*/
+$progress-h: 4px; /*TODO - to vars*/
+.screen {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-swiper {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; /*width is set by js*/
+    transform: translateX(0%);
+    transition: transform .3s ease;
+
+    & > * {
+        flex-grow: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.with-progress {
+        top: $progress-h;
+    }
+}
+
+.screen-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+body.$(mbet-class-wrapper)  {
+
+    .fetching {
+        .loader {
+            border-top: $loader-w solid $mbet-transp;
+            border-right: $loader-w solid $mbet-transp;
+            border-bottom: $loader-w solid $mbet-transp;
+            border-left: $loader-w solid $mbet-brand;
+        }
+    }
+
+}

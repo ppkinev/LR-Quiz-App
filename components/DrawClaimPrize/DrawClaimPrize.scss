@@ -1,0 +1,21 @@
+@import '../variables.scss';
+@import '../DrawBet/DrawBet.scss';
+
+.draw-claim {
+    .draw-claim-title {
+        padding: 10px 0 20px;
+    }
+}
+
+.draw-claim-form {
+    padding: 0 40px;
+    .input-group {
+        margin-bottom: 0;
+    }
+    input {
+        background: transparent;
+    }
+    .big-btn {
+        margin: 10px -25px;
+    }
+}

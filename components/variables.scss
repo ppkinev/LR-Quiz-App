@@ -1,0 +1,98 @@
+/*
+Colors
+*/
+$color-grey-lite: #F0F0F0; /* 240, 240, 240 */
+$color-grey: #B6B6B6; /* 182, 182, 182 */
+$color-grey-opaque: rgba(182, 182, 182, .3);
+$color-grey-dark: #727272; /* 114, 114, 114 */
+$color-grey-bg: #d8e0e5;
+
+$color-white: #fff;
+$color-green: #b9e9b4;
+$color-green-dark: #4e9838;
+$text-color: #fff;
+$brand-color-lite: #8392c0;
+$brand-color: #082581; /* Old: #4CAF50; */
+$brand-color-opaque: rgba(8, 37, 129, .5); /*Old rgba(76, 175, 80, .5);*/
+$brand-color-dark: #07205d; /*Old #388E3C;*/
+$brand-color-darkest: #0f0690; /*Old #2E422F;*/
+$color-blue-bright: #426EC5;
+$brand-color-light: #F1F9FF;
+$body-bg: $color-grey-lite;
+$popup-bg: rgba(63, 81, 181, 0.9);
+$color-selection: #e6e9f2; /*Old rgba(200, 230, 201, 0.5);*/
+$color-facebook: #3B5998;
+$color-twitter: #1DA1F2;
+$color-email: #D6C047;
+$color-sms: $brand-color;
+$color-error: #FF5258; /*255, 82, 88*/
+$color-error-opaque: rgba(255, 82, 88, .5);
+$color-winner: #F6921E;
+$color-winner-opaque: rgba(246, 196, 138, 0.75);
+$color-bet: #CECE1D;
+$color-no-goalscorer: #364A7A;
+/*
+Sizes
+*/
+$header-h: 4.4rem;
+$section-header-h: 2.2rem;
+$section-header-subtitle: 4.2rem;
+
+/*
+Fonts
+*/
+$font-family-roboto: 'Roboto', 'Helvetica', sans-serif;
+
+/* MBet styles */
+$mbet-class-wrapper: mbet;
+
+$mbet-brand: #cd232c;
+$mbet-black: #0e2445;
+$mbet-light: #e7d2d1;
+$mbet-dark: #731419;
+$mbet-transp: rgba(205, 35, 44, 0.5);
+
+/* Syntax example
+
+body.$(mbet-class-wrapper) {
+    .header {
+        background-color: $mbet-brand;
+    }
+}
+
+
+ */
+
+
+
+
+
+/*
+	All used font throughout the project (requires naming and usage only via variables)
+
+	20px => 10px => 1rem
+	22px => 11px => 1.1rem
+	24px => 12px => 1.2rem
+	28px => 14px => 1.4rem
+	34px => 17px => 1.7rem
+	38px => 19px => 1.9rem
+	48px => 24px => 2.4rem
+	66px => 33px => 3.3rem
+	88px => 44px => 4.4rem
+
+mixins postcss
+
+*/
+
+/* Transitions */
+@define-mixin tr-btn-like {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 150ms ease, opacity 150ms ease;
+
+    &:active {
+        transform: translateY(3px);
+        opacity: 0.3;
+    }
+}
+

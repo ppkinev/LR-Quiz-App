@@ -1,0 +1,218 @@
+@import '../variables.scss';
+
+.invite-friend {
+    position: relative;
+
+    padding: 1.5rem 0 4rem;
+    background-color: $color-white;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, .1);
+    margin: 1rem;
+
+    .invite-text-block {
+        margin-top: 2rem;
+        text-align: center;
+        padding-bottom: 4rem;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: $brand-color;
+            margin-bottom: 1rem;
+        }
+
+        span {
+            font-size: 1.3rem;
+            color: $color-grey-dark;
+        }
+
+        .green-circle {
+            color: $color-white;
+            display: inline-block;
+            padding: .4rem .8rem;
+            background: $color-bet;
+            border-radius: 1.2rem;
+        }
+    }
+
+    .invite-main-block {
+        margin: 0 2rem;
+
+        .facebook, .twitter, .email {
+            border: none;
+            border-radius: 5rem;
+            color: $color-white;
+            font-size: 1.8rem;
+            line-height: 5rem;
+            height: 5rem;
+        }
+        .twitter, .facebook {
+            background: #1da1f2;
+            position: relative;
+            text-align: center;
+            margin-bottom: 1.5rem;
+
+            img, span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            img {
+                height: 2rem;
+                width: auto;
+                margin-right: .5rem;
+            }
+
+        }
+        .facebook {
+            background: #3b5998;
+        }
+
+        .email {
+            text-align: center;
+            background-color: $brand-color;
+            color: $color-white;
+        }
+
+        .via {
+            color: $brand-color;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 4rem 0;
+
+            &:before, &:after {
+                content: '';
+                display: block;
+                width: 30%;
+                height: 1px;
+                background: $brand-color;
+                position: absolute;
+                left: 0;
+                top: 50%;
+            }
+            &:after {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        input {
+            outline: none;
+            border: 1px solid $brand-color;
+            height: 5rem;
+            line-height: 5rem;
+            border-radius: 5rem;
+            padding: 0 2.5rem;
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 1.4rem;
+            color: $brand-color;
+            margin-bottom: 1.5rem;
+
+            &.error-input {
+                border: 1px solid red;
+            }
+        }
+
+        input::-webkit-input-placeholder {
+            font-size: 1.4rem;
+            color: $color-blue-bright;
+        }
+
+        .error-input::-webkit-input-placeholder {
+            font-size: 1.4rem;
+            color: red;
+        }
+
+        .emailHold {
+            margin-bottom: 0;
+        }
+    }
+
+    .status {
+        margin-top: 20px;
+        text-align: center;
+        color: green;
+        font-size: 4vw;
+        opacity: 1;
+        transition: all linear 0.3s;
+    }
+    .status-hide {
+        opacity: 0;
+    }
+    .email-error {
+        color: red
+    }
+
+    .statusBlock {
+        height: 30px;
+        font-size: 3.5vw;
+    }
+    .statusPositive {
+        color: green;
+    }
+    .statusNegative {
+        color: red
+    }
+
+    .social-message {
+        font-size: 4vw;
+        text-align: center;
+        color: green;
+    }
+}
+
+.leaderboardScrollFix {
+    overflow-y: scroll;
+    .email {
+        margin-bottom: 8rem !important;
+    }
+}
+
+.inviteBlue {
+    margin-top: 10rem;
+    padding-left: 1rem;
+
+    .inviteResize {
+        font-size: 1.5rem
+    }
+}
+
+body.$(mbet-class-wrapper) {
+
+
+.invite-friend {
+    .invite-text-block {
+        h2 {
+            color: $mbet-brand;
+        }
+    }
+
+    .invite-main-block {
+        .email {
+            background-color: $mbet-brand;
+        }
+
+        .via {
+            color: $mbet-brand;
+
+            &:before, &:after {
+                background: $mbet-brand;
+            }
+        }
+
+        input {
+            border: 1px solid $mbet-brand;
+            color: $mbet-brand;
+        }
+
+        input::-webkit-input-placeholder {
+            color: $mbet-transp;
+        }
+    }
+}
+
+
+}

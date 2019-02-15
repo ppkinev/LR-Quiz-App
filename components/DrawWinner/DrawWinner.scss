@@ -1,0 +1,41 @@
+@import '../variables.scss';
+@import '../DrawBet/DrawBet.scss';
+
+.list-meta {
+    &.as-header {
+        padding: 15px 0 10px;
+    }
+}
+
+.draw-winner {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+$image-sz: 5.5rem;
+.draw-winner-image {
+    width: $image-sz;
+    height: $image-sz;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+    img {
+        height: $image-sz;
+        width: auto;
+    }
+}
+
+.draw-winner-text {
+    font-size: 1.4rem;
+    color: $color-grey-dark;
+    &.orange {
+        color: $color-winner
+    }
+}

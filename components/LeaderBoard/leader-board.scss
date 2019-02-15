@@ -1,0 +1,184 @@
+@import '../variables.scss';
+@import '../utils.scss';
+
+.leaderboard {
+  width: 85%;
+  margin: 15px auto;
+  padding: 20px 15px 20px 15px;
+  background: #fff;
+
+
+  .user-points {
+    font-size: 1.3rem;
+    color: $color-grey;
+  }
+
+
+
+}
+.leaderboard-title {
+  margin-bottom: 10px;
+  color: #000;
+  border-bottom: solid 1px #E0E7EB;
+
+  h2 {
+    font-size: 20px;
+    line-height: 0.5em;
+    margin-left: 10px;
+    color: #555;
+  }
+  p {
+    font-size: 12px;
+    margin-left: 10px;
+    color: $color-grey;
+  }
+}
+.top3cols {
+  margin-top: 20px;
+}
+.leaderboard-top {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%;
+  text-align: center;
+  position: relative;
+
+  .leaderboard-top-info {
+    margin-top: 8px;
+  }
+
+}
+
+$logo-sz: 55px;
+.user-logo {
+  width: $logo-sz;
+  height: $logo-sz;
+  border-radius: 50%;
+}
+.user-logo-cont {
+  display: inline-block;
+  position: relative;
+  width: $logo-sz;
+  height: $logo-sz;
+  margin-bottom: 5px;
+
+  $medal-sz: 28px;
+  .user-medal {
+    position: absolute;
+    top: -8px;
+    right: -14px;
+    width: $medal-sz;
+    height: $medal-sz;
+    line-height: 2.8;
+    text-align: center;
+    font-size: 1.2rem;
+
+    &.gold {
+      background-image: url('./images/rank-gold.png');
+    }
+    &.silver {
+      background-image: url('./images/rank-silver.png');
+    }
+    &.bronze {
+      background-image: url('./images/rank-bronze.png');
+    }
+  }
+}
+.user-name {
+  @mixin ellipsis;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: $brand-color;
+
+  &.large {
+    font-size: 1.7rem;
+  }
+}
+.user-points {
+  font-size: 1rem;
+  margin-bottom: 3px;
+  color: $color-grey;
+
+  &.large {
+    font-size: 1.2rem;
+  }
+}
+.user-list-item {
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  color: $color-grey-dark;
+  position : relative;
+  border-bottom: 1px solid $color-grey-opaque;
+
+  &.myself {
+    background: $color-selection;
+  }
+}
+.user-rank {
+  padding: 0 15px;
+}
+.user-details {
+  margin-left: 10px;
+}
+
+.filter-by-time {
+  margin-bottom: 15px;
+  color: #555;
+  background: #fff;
+
+  ul {
+    font-size: 13px;
+    width: 90%;
+    height: 45px;
+    margin: 0 auto;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      width: 33%;
+      height: 30px;
+      padding-top: 15px;
+    }
+  }
+
+
+}
+
+
+.hover-block {
+  display: none;
+}
+.show-hover-block {
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height : 100%;
+}
+
+.emptyContent {
+
+  padding-top: 100px;
+  text-align: center;
+
+  h3 {
+    color : grey;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  span {
+    color : rgba(0,0,0,0.2);
+    font-size: 12px;
+  }
+}
+
+body.$(mbet-class-wrapper) {
+    .user-name {
+        color: $mbet-brand;
+    }
+}

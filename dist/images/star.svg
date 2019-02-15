@@ -1,0 +1,42 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+    <style type="text/css">
+        polygon{
+            fill: #F9B619;
+            stroke: #ffffff;
+            stroke-width: 5px;
+            stroke-dashoffset: 0;
+            stroke-dasharray: 345;
+            transform-origin: center;
+
+            animation: star 12s forwards infinite ease;
+        }
+
+        @keyframes star {
+            0% {
+                stroke-dashoffset: 0;
+            }
+            20% {
+                stroke-dashoffset: 345;
+                stroke: #ffffff;
+            }
+            40% {
+                stroke-dashoffset: 0;
+                stroke: #00309b;
+            }
+            60% {
+                stroke-dashoffset: 345;
+                stroke: #00309b;
+            }
+            80% {
+                stroke-dashoffset: 0;
+                stroke: #ffffff;
+            }
+        }
+    </style>
+
+    <polygon points="50,2.6 65.1,33.4 99.1,38.4 74.5,62.4 80.3,96.3 50,80.3 19.6,96.3 25.4,62.4 0.9,38.4 34.8,33.4"/>
+
+</svg>
+
+

@@ -1,0 +1,23 @@
+@import '../variables.scss';
+@import '../utils.scss';
+@import '../DrawBet/DrawBet.scss';
+
+.draw-exit {
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.big-image-panel {
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.big-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    margin-bottom: 15px;
+    @mixin center-image;
+}

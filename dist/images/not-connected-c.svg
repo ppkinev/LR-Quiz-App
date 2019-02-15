@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.33 50.33">
+  <defs>
+    <style>
+      .a {
+        fill: #082581;
+      }
+
+      .b {
+        fill: none;
+        stroke: #082581;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>not-connected-c</title>
+  <path class="a" d="M31.22,32.42c-3.35,0-10,1.61-10,4.83v2.42H41.26V37.25c0-3.23-6.69-4.83-10-4.83h0Zm-11.3-4.83V24H17.41v3.63H13.65V30h3.77v3.63h2.51V30h3.77V27.58H19.92ZM31.22,30a4.84,4.84,0,1,0-5-4.83A4.93,4.93,0,0,0,31.22,30Z" transform="translate(-4.83 -4.83)"/>
+  <circle class="b" cx="25.17" cy="25.17" r="24.17"/>
+</svg>

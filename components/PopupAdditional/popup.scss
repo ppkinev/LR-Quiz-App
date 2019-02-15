@@ -1,0 +1,42 @@
+@import '../variables.scss';
+$popup-height: 102px;
+.popup {
+  position: absolute;
+  top: 0; height: $popup-height;
+  left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s ease;
+  transform: translateY(-100%);
+  &.visible {
+    transform: translateY(0%);
+  }
+
+  &.blue {
+    background: $popup-bg;
+    color: #fff;
+  }
+}
+$popup-icon-sz: 65px;
+.popup-icon {
+  flex: 1 0 auto;
+  max-width: $popup-icon-sz;
+  min-width: $popup-icon-sz;
+  height: $popup-icon-sz;
+  border-radius: 50%;
+  background-color: #fff;
+  background-image: url('./images/icon-shared.png');
+  background-repeat: no-repeat;
+  background-position: 17px 17px;
+}
+.popup-content {
+  padding-left: 15px;
+}
+.popup-title {
+  font-size: 2rem;
+}
+.popup-text {
+  font-size: 1.2rem;
+}
+

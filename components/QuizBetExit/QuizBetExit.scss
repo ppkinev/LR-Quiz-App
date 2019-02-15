@@ -1,0 +1,51 @@
+@import '../variables.scss';
+@import '../utils.scss';
+.quiz-exit {
+  padding: 15px;
+  overflow-y: auto;
+  text-align: center;
+
+  & > .text-regular {
+    margin: -10px 0 15px;
+  }
+}
+.big-image-panel {
+  display: block;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #fff;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.quiz-big-image {
+  display: block;
+  width: 80%;
+  height: 100px;
+  margin: 12px auto;
+  @mixin center-image;
+}
+.quiz-exit-title {
+  font-size: 2.2rem;
+  margin-bottom: 2px;
+
+  &.free-draws {
+    color: $brand-color-dark;
+  }
+  &.earn-more {
+    color: #E89700;
+  }
+  &.signup-bet {
+    color: #358C39;
+  }
+}
+.quiz-exit-subtitle {
+  font-size: 1.5rem;
+  color: $color-grey;
+}
+
+body.$(mbet-class-wrapper) {
+    .quiz-exit-title {
+        &.free-draws {
+            color: $mbet-dark;
+        }
+    }
+}

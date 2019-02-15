@@ -1,0 +1,239 @@
+@import '../variables.scss';
+
+.slider {
+    display: flex;
+    align-items: center;
+    margin: .5rem 3rem;
+}
+
+.slider-icon {
+    width: 16px;
+    height: 16px;
+    padding: 15px;
+    background-position: 15px;
+    background-size: 10px;
+    background-repeat: no-repeat;
+}
+
+.icon-minus {
+    background-image: url('./images/icon-slider-minus.png');
+}
+
+.icon-plus {
+    background-image: url('./images/icon-slider-plus.png');
+}
+
+
+.dg-bet-slider {
+    width: 100%;
+
+    -webkit-appearance: none;
+    background: transparent;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-ms-track {
+        width: 100%;
+        cursor: pointer;
+
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+
+    $sliderHeight: 3px;
+    $bgShadow: rgba(0,0,0,0.5);
+
+    @define-mixin slider-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: $brand-color;
+        cursor: pointer;
+        margin-top: -7px;
+        box-shadow: 1px 1px 2px 1px $bgShadow;
+        transition: transform 0.2s ease,
+                    box-shadow 0.2s ease,
+                    background-color 0.2s ease;
+
+    }
+
+    @define-mixin slider-track {
+        width: 100%;
+        height: $sliderHeight;
+        cursor: pointer;
+        background: $brand-color;
+        border-radius: 3px;
+        transition: background-color 0.3s ease 0.1s;
+    }
+
+    &::-webkit-slider-thumb{
+        @mixin slider-thumb;
+    }
+    &:active::-webkit-slider-thumb {
+        transform: scale(1.2, 1.2);
+        box-shadow: 1px 1px 5px $color-twitter;
+        background-color: $color-twitter;
+    }
+
+    &::-moz-range-thumb {
+        @mixin slider-thumb;
+    }
+    &:active::-moz-range-thumb {
+        transform: scale(1.2, 1.2);
+        box-shadow: 1px 1px 5px $color-twitter;
+        background-color: $color-twitter;
+    }
+
+    &::-ms-thumb {
+        @mixin slider-thumb;
+    }
+    &:active::-ms-thumb {
+        transform: scale(1.2, 1.2);
+        box-shadow: 1px 1px 5px $color-twitter;
+        background-color: $color-twitter;
+    }
+
+
+    &::-webkit-slider-runnable-track {
+        @mixin slider-track;
+    }
+
+    &:active::-webkit-slider-runnable-track {
+        background: $color-twitter;
+    }
+
+    &::-moz-range-track {
+        @mixin slider-track;
+    }
+
+    &::-ms-track {
+        width: 100%;
+        height: $sliderHeight;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+    &::-ms-fill-lower {
+        background: $brand-color;
+        border: 0;
+        border-radius: 3px;
+    }
+    &:active::-ms-fill-lower {
+        background: $color-twitter;
+    }
+    &::-ms-fill-upper {
+        background: $brand-color;
+        border: 0;
+        border-radius: 3px;
+    }
+    &:active::-ms-fill-upper {
+        background: $color-twitter;
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .dg-bet-slider {
+        $sliderHeight: 3px;
+        $bgShadow: rgba(0,0,0,0.5);
+
+        $brand-color: $mbet-brand;
+
+        @define-mixin slider-thumb {
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: $brand-color;
+            cursor: pointer;
+            margin-top: -7px;
+            box-shadow: 1px 1px 2px 1px $bgShadow;
+            transition: transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background-color 0.2s ease;
+
+        }
+
+        @define-mixin slider-track {
+            width: 100%;
+            height: $sliderHeight;
+            cursor: pointer;
+            background: $brand-color;
+            border-radius: 3px;
+            transition: background-color 0.3s ease 0.1s;
+        }
+
+        &::-webkit-slider-thumb{
+            @mixin slider-thumb;
+        }
+        &:active::-webkit-slider-thumb {
+            transform: scale(1.2, 1.2);
+            box-shadow: 1px 1px 5px $color-twitter;
+            background-color: $color-twitter;
+        }
+
+        &::-moz-range-thumb {
+            @mixin slider-thumb;
+        }
+        &:active::-moz-range-thumb {
+            transform: scale(1.2, 1.2);
+            box-shadow: 1px 1px 5px $color-twitter;
+            background-color: $color-twitter;
+        }
+
+        &::-ms-thumb {
+            @mixin slider-thumb;
+        }
+        &:active::-ms-thumb {
+            transform: scale(1.2, 1.2);
+            box-shadow: 1px 1px 5px $color-twitter;
+            background-color: $color-twitter;
+        }
+
+
+        &::-webkit-slider-runnable-track {
+            @mixin slider-track;
+        }
+
+        &:active::-webkit-slider-runnable-track {
+            background: $color-twitter;
+        }
+
+        &::-moz-range-track {
+            @mixin slider-track;
+        }
+
+        &::-ms-track {
+            width: 100%;
+            height: $sliderHeight;
+            cursor: pointer;
+            background: transparent;
+            border-color: transparent;
+            border-width: 16px 0;
+            color: transparent;
+        }
+        &::-ms-fill-lower {
+            background: $brand-color;
+            border: 0;
+            border-radius: 3px;
+        }
+        &:active::-ms-fill-lower {
+            background: $color-twitter;
+        }
+        &::-ms-fill-upper {
+            background: $brand-color;
+            border: 0;
+            border-radius: 3px;
+    }
+    &:active::-ms-fill-upper {
+        background: $color-twitter;
+    }
+}
+}

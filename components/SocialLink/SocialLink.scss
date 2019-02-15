@@ -1,0 +1,24 @@
+@import '../variables.scss';
+.social-link {
+  font-size: 1.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .social-icon {
+    margin-right: 10px;
+  }
+  .social-pts {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+  }
+
+  &.facebook {
+    color: $color-facebook;
+  }
+  &.twitter {
+    color: $color-twitter;
+  }
+}

@@ -1,0 +1,104 @@
+@import '../variables.scss';
+
+#notificationHolder {
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    z-index: 190;
+
+    .notificationLeaderboard, .inviteNotification {
+        box-sizing: border-box;
+        height: 95px;
+        left: 0;
+        top: 0;
+        background: $brand-color;
+        width: 100%;
+        overflow: hidden;
+        z-index: 100;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .notification-left-side {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .notification-right-side {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .picture {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 2rem;
+        }
+
+        .central {
+            .title {
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                margin-bottom: .5rem;
+            }
+
+            .message {
+                font-size: 1.1rem;
+            }
+        }
+
+        .close {
+            font-size: 24px;
+            font-weight: 100;
+            /*position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);*/
+        }
+    }
+
+    .leaderboardNotification {
+        z-index: 2;
+    }
+
+    .top3Notification {
+        background: #f59c33;
+    }
+
+}
+
+.additionalInviteMargin {
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    #notificationHolder {
+        .inviteNotification {
+            .central {
+                h3 {
+                    margin-top: -5px;
+                    font-size: 5vw;
+                    line-height: 5vw;
+                }
+                span {
+                    font-size: 2.8vw;
+                }
+            }
+        }
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    #notificationHolder {
+        .notificationLeaderboard, .inviteNotification {
+            background: $mbet-brand;
+        }
+    }
+}

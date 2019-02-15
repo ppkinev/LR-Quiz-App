@@ -1,0 +1,95 @@
+@import '../variables.scss';
+
+.big-btn {
+    display: block;
+    text-align: center;
+    margin: 0 15px 25px;
+    padding: 12px 0;
+    line-height: 22px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.simple-btn {
+    font-size: 1.2rem;
+    background: $brand-color;
+    color: $text-color;
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .4);
+
+    text-align: center;
+    margin: 1rem;
+    padding: .8rem;
+    line-height: 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+
+    &.green {
+        background: $color-green-dark;
+    }
+}
+
+.money-btn {
+    font-size: 1.6rem;
+    background: $brand-color;
+    color: $text-color;
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .4);
+    transition: background 0.2s ease;
+
+    &.disabled {
+        background: $brand-color-opaque;
+    }
+
+    &.predicted {
+        background: $color-bet;
+    }
+}
+
+.share-btn {
+    font-size: 1.6rem;
+    color: $brand-color;
+    border: 1px solid $brand-color;
+}
+
+.facebook-btn {
+    margin: 0 0 10px;
+    font-size: 1.6rem;
+    color: #fff;
+    background: $color-facebook;
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .4);
+}
+
+.btn-text-sm {
+    font-size: 1.2rem;
+    color: $brand-color-lite;
+}
+
+.grey-btn {
+    padding: 5px 0;
+    font-size: 1.2rem;
+    background: $color-grey-dark;
+    color: $text-color;
+
+    .btn-text-sm {
+        color: $color-grey;
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .simple-btn {
+        background: $mbet-brand;
+    }
+    .share-btn {
+        color: $mbet-brand;
+        border: 1px solid $mbet-brand;
+    }
+    .btn-text-sm {
+        color: $mbet-light;
+    }
+    .money-btn {
+        background: $mbet-brand;
+
+        &.disabled {
+            background: $mbet-transp;
+        }
+    }
+}

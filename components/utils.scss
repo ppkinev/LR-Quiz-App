@@ -1,0 +1,182 @@
+@import './variables.scss';
+
+/*
+Columns
+*/
+.cols-3 {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    .col {
+        position: relative;
+        flex: 0 1 auto;
+        width: 25%;
+        transform: translateY(100%);
+        transition: transform .4s ease;
+    }
+}
+
+.cols-2 {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    .col {
+        position: relative;
+        flex: 0 1 auto;
+        width: 45%;
+        transform: translateY(100%);
+        transition: transform .4s ease;
+    }
+}
+
+/*
+Text utils
+*/
+.text-brand {
+    color: $brand-color;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.link-normal {
+    color: $color-twitter;
+    text-decoration: underline;
+}
+
+.text-regular {
+    font-size: 1.8rem;
+    color: $color-grey-dark
+}
+
+/*
+Placeholders
+*/
+::placeholder {
+    font-size: 1.9rem;
+    color: $brand-color-opaque;
+}
+
+/*
+Mixins
+*/
+@define-mixin ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@define-mixin center-image {
+    position: relative;
+    overflow: hidden;
+    opacity: 0.99; /* overflow doesn't work without this */
+    img {
+        position: absolute;
+        max-height: 100%;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+}
+
+/*
+Lists
+*/
+.list-title {
+    font-size: 1.4rem;
+    color: $brand-color;
+}
+
+.list-meta {
+    font-size: 1rem;
+    line-height: 1.6; /* 14/10 */
+    margin-bottom: 4px;
+    color: $color-grey-dark;
+    text-transform: uppercase;
+}
+
+.list-label-cont {
+    margin-right: -40px; /*Let it go to right edge*/
+}
+
+.list-label {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1.2rem;
+    line-height: 2.2;
+    padding: 0 1.5rem;
+    color: #fff;
+    border-radius: 15px;
+    &.green {
+        background: $color-bet;
+    }
+    &.winner {
+        background: $brand-color;
+        white-space: nowrap;
+    }
+    &.grey {
+        background-color: $color-grey;
+    }
+    &.friends {
+        color: $color-blue-bright;
+        border: 1px solid $color-blue-bright;
+    }
+}
+
+.list-item-arrow {
+    width: 3.6rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 0.8rem;
+    }
+}
+
+/*Common*/
+$success-icon-sz: 105px;
+.icon-success {
+    width: $success-icon-sz;
+    height: $success-icon-sz;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    background-color: $brand-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+body.$(mbet-class-wrapper) {
+    .text-brand {
+        color: $mbet-brand;
+    }
+    .list-title {
+        color: $mbet-brand;
+    }
+    .list-label {
+        &.winner {
+            background: $mbet-brand;
+        }
+        &.friends {
+            color: $mbet-brand;
+            border: 1px solid $mbet-brand;
+        }
+    }
+    .icon-success {
+        background-color: $mbet-brand;
+    }
+}
